@@ -793,13 +793,18 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $databases['default']['default'] = array (
-  'database' => 'd8_demo',
-  'username' => 'webservadmin',
-  'password' => 'stud3bak3r',
+  'database' => 'something',
+  'username' => 'something',
+  'password' => 'something',
   'prefix' => '',
   'host' => '3c5a0a79e808',
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
 );
-$settings['config_sync_directory'] = 'sites/default/files/config_zTBsva10MhEWK3EJCiwaW65grpdopFzqfZg2MNAaG30ItbmGtN33z2H7RIQKgqKU6Zj_mvLWYA/sync';
+
+$config_directories[CONFIG_SYNC_DIRECTORY] = '../config/sync';
+
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+  include $app_root . '/' . $site_path . '/settings.local.php';
+}
